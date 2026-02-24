@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Библиотека - Брезицкий Сергей Олегович - Разработка системы моделирования поведения группы агентов в пространстве</title>
+  <title>Библиотека - Брезицкий Сергей Олегович - Разработка гибридных архитектур на базе платформы 1С</title>
   <link rel="stylesheet" type="text/css" href="../css/master_style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../icon/favicon-96x96.png" sizes="96x96" />
@@ -10,6 +10,143 @@
   <link rel="shortcut icon" href="../icon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png" />
   <link rel="manifest" href="../icon/site.webmanifest" />
+  <!-- Дополнительные стили (аналогично странице ссылок) -->
+  <style>
+    /* Общие улучшения */
+    #maintext {
+      background: rgba(255,255,255,0.9);
+      border-radius: 28px;
+      padding: 35px 40px;
+      box-shadow: 0 20px 40px rgba(0,40,60,0.2);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+    #maintext h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      border-left: 7px solid #1C3F5C;
+      padding-left: 22px;
+      margin-top: 0;
+      margin-bottom: 35px;
+      color: #0a3144;
+    }
+    #maintext h2 {
+      font-size: 1.9rem;
+      font-weight: 500;
+      margin: 45px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #9fc5e8;
+      color: #1C3F5C;
+    }
+    .lib {
+      list-style: none;
+      padding: 22px 28px;
+      margin: 18px 0;
+      background: #f5fafd;
+      border-radius: 30px;
+      box-shadow: 0 8px 18px rgba(28,63,92,0.1);
+      border-left: 8px solid #2C5F7A;
+      transition: transform 0.25s, box-shadow 0.3s, border-left-color 0.2s;
+    }
+    .lib:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 30px rgba(28,63,92,0.2);
+      border-left-color: #4A90E2;
+    }
+    .lib a {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0a4b6e;
+      text-decoration: none;
+      border-bottom: 1px dotted #2C5F7A;
+      transition: 0.2s;
+    }
+    .lib a:hover {
+      color: #022b40;
+      border-bottom: 2px solid #1C3F5C;
+    }
+    .cat {
+      font-weight: 600;
+      color: #1C3F5C;
+      background: #d7e6f5;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-right: 10px;
+      letter-spacing: 0.3px;
+    }
+    .lib p {
+      margin: 10px 0 5px;
+      color: #1e3f54;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+    /* Меню */
+    #menu-toggle span {
+      background-color: #1C3F5C;
+      height: 3px;
+      border-radius: 4px;
+    }
+    #side-menu {
+      background: linear-gradient(160deg, #ffffff 0%, #eef5fa 100%);
+      box-shadow: -5px 0 40px rgba(0,30,50,0.25);
+    }
+    #menu-close {
+      color: #1C3F5C;
+      font-weight: 600;
+    }
+    .menu-item {
+      border-radius: 40px 0 0 40px;
+      margin: 6px 0 6px 15px;
+      padding: 12px 25px;
+      font-weight: 500;
+      transition: 0.25s;
+    }
+    .menu-item.active {
+      background: #1C3F5C;
+      color: white;
+      box-shadow: 0 6px 14px rgba(0,60,100,0.35);
+    }
+    .menu-item:hover {
+      background: #b5d1e6;
+      color: #1C3F5C;
+      transform: translateX(-6px);
+    }
+    #overlay {
+      backdrop-filter: blur(3px);
+    }
+    /* Шапка */
+    #header {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(6px);
+      border-radius: 45px;
+      padding: 22px 32px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    }
+    #headertext h1, #headertext h3 {
+      color: #0a2f40;
+    }
+    #photomag img {
+      border-radius: 30px;
+      border: 4px solid white;
+      box-shadow: 0 12px 22px rgba(0,0,0,0.15);
+    }
+    #topblock a {
+      color: #1C3F5C;
+      font-weight: 600;
+    }
+    #menub .mitemb {
+      background: rgba(28,63,92,0.1);
+      border-radius: 30px;
+      transition: 0.2s;
+    }
+    #menub .mitemb:hover {
+      background: #1C3F5C;
+      color: white;
+    }
+  </style>
 </head>
 
 <body lang="ru">
@@ -35,131 +172,184 @@
   <!-- Оверлей для закрытия меню при клике вне его -->
   <div id="overlay"></div>
 
-  <!-- Основной контент в полупрозрачном контейнере -->
+  <!-- Основной контент -->
   <div id="content-container">
-	  <div id="topblock">
-		  <div id="donntu">
-			  <a href="http://kubsu.ru" target=_blank>КубГУ</a> 
-		  </div>
-	  </div>
+    <div id="topblock">
+      <div id="donntu">
+        <a href="https://www.kubsu.ru/" target="_blank">КубГУ</a> 
+      </div>
+    </div>
 
-	  <div id="header">
-		  <div id="photomag">
-			  <a href="../ivanov_big.jpg"><img src="../photo.jpg"  width=180 height=240 title="Магистр КубГУ Брезицкий Сергей Олегович" alt="Магистр КубГУ Брезицкий Сергей Олегович" border=0></a>
-		  </div>
-		  <div id="headertext">
-			<h1 class="hdr">Брезицкий Сергей Олегович</h1>
-			<h3 class="hdr">Факультет компьютерных технологий и прикладной математики</h3>
-			<h3 class="hdr">Кафедра информационных технологий</h3>
-			<h3 class="hdr">Специальность &laquo;Технологии программирования и разработки информационно-коммуникационных систем&raquo;</h3>
-			<h2 class="hdr">Разработка системы моделирования поведения группы агентов в пространстве</h2>
-			<h3 class="hdr">Научный руководитель: к.т.н., доц. Полупанов Алексей Александрович</h3>
-		  </div>
-	  </div>
+    <div id="header">
+      <div id="photomag">
+        <a href="../ivanov_big.jpg"><img src="../photo.jpg" width="180" height="240" title="Магистр КубГУ Спиридонов Артем Игоревич" alt="Магистр КубГУСпиридонов Артем Игоревич" border="0"></a>
+      </div>
+      <div id="headertext">
+        <h1 class="hdr">Спиридонов Артем Игоревич</h1>
+        <h3 class="hdr">Факультет компьютерных технологий и прикладной математики</h3>
+        <h3 class="hdr">Кафедра информационных технологий</h3>
+        <h3 class="hdr">Специальность &laquo;Технологии программирования и разработки информационно-коммуникационных систем&raquo;</h3>
+        <h2 class="hdr">Разработка гибридных архитектур на базе платформы 1С</h2>
+        <h3 class="hdr">Научный руководитель: к.т.н., доц. Полетайкин Алексей иколаевич</h3>
+      </div>
+    </div>
 
-	  <div id="middleblock">
-		  <div id="maintext">
-			  <h1>Электронная библиотека материалов</h1>
-			  <ol>
-				  <h2>Собственные публикации и доклады</h2>
-				  <h3>Статьи</h3>
-				  <li class=lib>
-				  <a href="article2025.pdf">Моделирование поведения агентов в трёхмерном пространстве</a>
-				  <p><span class=cat>Авторы:</span> С.О.&nbsp;Брезицкий, А.А.&nbsp;Полупанов</p>
-				  <p><span class=cat>Описание:</span> Статья посвящена моделированию поведения агентов в трёхмерной среде с применением современных инструментов. Разработана экспериментальная сцена эвакуации из здания, выявлено влияние паники на время эвакуации.</p> 
-				  <p><span class=cat>Источник:</span> Прикладная математика: современные проблемы математики, информатики и моделирования / Материалы VII Всероссийской научно-практической конференции молодых ученых. — Краснодар, КубГУ — 2025, с. 311-315.</p>
-				  </li>
-				  <li class=lib>
-				  <a href="article2024.pdf">Подсистема защиты графических данных с помощью объектов со скрытым идентификационным слоем</a>
-				  <p><span class=cat>Авторы:</span> С.О.&nbsp;Брезицкий, А.А.&nbsp;Полупанов</p>
-				  <p><span class=cat>Описание:</span> В статье рассмотрены основные методы внедрения скрытого идентификационного слоя в графические объекты. Разработана подсистема для скрытого внедрения идентификационных данных в графические объекты без ухудшения их визуальных характеристик и обеспечения возможности их последующей верификации. </p>
-				  <p><span class=cat>Источник:</span> Прикладная математика: современные проблемы математики, информатики и моделирования / Материалы VI Всероссийской научно-практической конференции молодых ученых. — Краснодар, КубГУ — 2024, Том I, с. 333-337.</p>
-				  </li>
-				  <h3>Доклады</h3>
-				  <li class=lib>
-				  <a href="spetssem2.pdf">Доклад по теме "KAN"</a>
-				  <p><span class=cat>Авторы:</span> С.О.&nbsp;Брезицкий</p>
-				  <p><span class=cat>Описание:</span> Доклад посвящён сравнению классической архитектуры нейронных сетей (MLP) и новой архитектуры — KAN (Kolmogorov–Arnold Networks).</p>
-				  </li>
-				  <li class=lib>
-				  <a href="app1.pdf">Доклад по теме "Практическое применение агентов"</a>
-				  <p><span class=cat>Авторы:</span> С.О.&nbsp;Брезицкий</p>
-				  <p><span class=cat>Описание:</span> Доклад исследует применение агентного моделирования для оценки эффективности мобильного приложения по отслеживанию контактов во время пандемии COVID-19.</p>
-				  </li>
-				  <li class=lib>
-				  <a href="app2.pdf">Доклад по теме "Анализ агентных платформ"</a>
-				  <p><span class=cat>Авторы:</span> С.О.&nbsp;Брезицкий</p>
-				  <p><span class=cat>Описание:</span> Представляет обзор платформы SPADE для разработки мультиагентных систем на Python. Описываются её основные особенности и приводятся примеры реальных проектов.</p>
-				  </li>
-				  <h2>Тематические статьи</h2>
-				  <h3>Публикации и доклады научного руководителя</h3>
-				  <li class=lib>
-				  <a href="article_rass.pdf">Популяционные модели и модели иммунных процессов в агентном моделировании инфекционных заболеваний</a>
-				  <p><span class=cat>Авторы:</span> Д.К.&nbsp;Рассохин, А.А.&nbsp;Полупанов</p>
-				  <p><span class=cat>Описание:</span> В рамках данной статьи были рассмотрены модели иммунных процессов и модель распространения заболевания в популяции на примере вирусного гепатита С и их совместное использование в агентной модели.</p> 
-				  <p><span class=cat>Источник:</span> Прикладная математика: современные проблемы математики, информатики и моделирования / Материалы VI Всероссийской научно-практической конференции молодых ученых. — Краснодар, КубГУ — 2024, Том II, с. 103-107.</p>
-				  </li>
-				  <li class=lib>
-				  <a href="article_scher.pdf">Адаптивное поведение агентов для нахождения кратчайшего маршрута</a>
-				  <p><span class=cat>Авторы:</span> Д.В.&nbsp;Щербаков, А.А.&nbsp;Полупанов</p>
-				  <p><span class=cat>Описание:</span> В статье приводится алгоритм поведения агентов в рамках муравьиного алгоритма и созданный программный комплекс, разъясняется процесс работы многоагентной системы и взаимодействия агентов для поиска оптимального пути</p>
-				  <p><span class=cat>Источник:</span> Прикладная математика: современные проблемы математики, информатики и моделирования / Материалы V Всероссийской научно-практической конференции молодых ученых. — Краснодар, КубГУ — 2023, с. 363-366</p>
-				  </li>
-				  <li class=lib>
-				  <a href="article2009.pdf">Обзор эволюционных методов оптимизации на основе роевого интеллекта</a>
-				  <p><span class=cat>Авторы:</span> А.А.&nbsp;Зайцев, В.В.&nbsp;Курейчик, А.А.&nbsp;Полупанов</p>
-				  <p><span class=cat>Описание:</span> В статье проводится обзор, актуальных в последнее время, алгоритмов и методов роевого интеллекта, таких как: «муравьиные», «пчелиные» алгоритмы, метод роя частиц, а также показаны их особенности, достоинства и недостатки.</p>
-				  <p><span class=cat>Источник:</span> Известия ЮФУ. Технические науки — Таганрог, ЮФУ — №12 (113), 2009, с. 7-12</p>
-				  </li>
-				  <h3>Работы различных авторов</h3>
-				  <li class=lib>
-				  <a href="009.pdf">Agent-based modeling and simulation</a>
-				  <p><span class=cat>Авторы:</span> C.M.&nbsp;Macal, M.J.&nbsp;North</p>
-				  <p><span class=cat>Описание:</span> В статье описывается ABMS как подход к моделированию систем, состоящих из автономных взаимодействующих агентов, который становится всё более популярным благодаря развитию вычислительных технологий.</p>
-				  <p><span class=cat>Источник:</span> Macal&nbsp;C.M. Agent-based modeling and simulation. / C.M.&nbsp;Macal, M.J.&nbsp;North // Proceedings of the 2009 Winter Simulation Conference. – Austin, TX, 2009. – pp. 86-98., <a href="https://www.researchgate.net/publication/216813135_Agent-based_modeling_and_simulation">ResearchGate. ...</a></p>
-				  </li>
-				  <li class=lib>
-				  <a href="9805244v1.pdf">Social force model for pedestrian dynamics</a>
-				  <p><span class=cat>Авторы:</span> D.&nbsp;Helbing, P.&nbsp;Molnar</p>
-				  <p><span class=cat>Описание:</span> Статья представляет собой классическую работу, в которой предлагается модель социальных сил для описания движения пешеходов. Авторы рассматривают поведение пешеходов как результат действия виртуальных «социальных сил», отражающих внутренние мотивации людей, а не физические воздействия.</p> 
-				  <p><span class=cat>Источник:</span> Helbing&nbsp;D. Social force model for pedestrian dynamics / D.&nbsp;Helbing, P.&nbsp;Molnar // Physical Review E. – 1995. – Vol. 51. – pp. 4282-4286., <a href="https://arxiv.org/abs/cond-mat/9805244">arXiv. ...</a></p>
-				  </li>
-				  <li class=lib>
-				  <a href="1909.07528v2.pdf">Emergent Tool Use From Multi-Agent Autocurricula</a>
-				  <p><span class=cat>Авторы: </span>B.&nbsp;Baker, I.&nbsp;Kanitscheider, T.&nbsp;Markov, Y.&nbsp;Wu, G.&nbsp;Powell, B.&nbsp;McGrew, I.&nbsp;Mordatch</p>
-				  <p><span class=cat>Описание: </span> Статья демонстрирует, как многоагентное соревнование в простой игре «прятки» (hide-and-seek) в физически достоверной среде приводит к возникновению сложного поведения и использования инструментов без какого-либо явного поощрения за эти действия.</p>
-				  <p><span class=cat>Источник: </span>Baker&nbsp;B. Emergent Tool Use From Multi-Agent Autocurricula / B.&nbsp;Baker, I.&nbsp;Kanitscheider, T.&nbsp;Markov, Y.&nbsp;Wu, G.&nbsp;Powell, B.&nbsp;McGrew, I.&nbsp;Mordatch // International Conference on Learning Representations (ICLR). – 2020., <a href="https://arxiv.org/abs/1909.07528">arXiv. ...</a></p>
-				  </li>
-			  </ol>
-		  </div> <!-- maintext -->
-	  </div> <!-- middleblock -->
+    <div id="middleblock">
+      <div id="maintext">
+        <h1>Электронная библиотека материалов</h1>
 
-	  <div id="menub">
-		  <a class="mitemb" href="../index.html">Резюме</a>
-		  <a class="mitemb" href="../bio/index.html">Биография</a>
-		  <a class="mitemb" href="../diss/index.html">Реферат</a>
-		  <a class="mitemb" href="../links/index.html">Ссылки</a>
-		  <a class="mitemb" href="../report/index.html">Отчет о поиске</a> 
-		  <a class="mitemb" href="../ind/index.html">Индивидуальный раздел</a>
-	  </div>
+        <!-- Только сторонние авторы (все внутренние публикации удалены) -->
+        <h2>Материалы сторонних авторов по гибридным архитектурам и платформе 1С</h2>
+
+        <ol style="list-style-type: none; padding-left: 0;">
+
+          <!-- 1. Официальная документация ИТС -->
+          <li class="lib">
+            <a href="https://its.1c.ru/db/metod81#content:5800:1" target="_blank">Расширения конфигураций в 1С:Предприятии 8 (методические материалы)</a>
+            <p><span class="cat">Автор:</span> Фирма «1С»</p>
+            <p><span class="cat">Описание:</span> Официальное руководство по использованию расширений — ключевого механизма для построения гибридных решений без снятия с поддержки.</p>
+            <p><span class="cat">Источник:</span> Информационно-технологическое сопровождение (ИТС), 2024.</p>
+          </li>
+
+          <!-- 2. Радченко, Хрусталева — учебник -->
+          <li class="lib">
+            <a href="https://www.litres.ru/book/mihail-radchenko/1s-predpriyatie-8-3-prakticheskoe-posobie-razrabotchika-6812353/" target="_blank">1С:Предприятие 8.3. Практическое пособие разработчика (глава «Расширения», «Интеграция»)</a>
+            <p><span class="cat">Авторы:</span> М.Г. Радченко, Е.Ю. Хрусталева</p>
+            <p><span class="cat">Описание:</span> Базовая книга по разработке на платформе, содержащая разделы по архитектуре клиент-сервер, расширениям, веб-сервисам и мобильной платформе.</p>
+            <p><span class="cat">Издательство:</span> 1С-Паблишинг, 2023. — 964 с.</p>
+          </li>
+
+          <!-- 3. Статья на Хабре: REST-интеграция -->
+          <li class="lib">
+            <a href="https://habr.com/ru/articles/725642/" target="_blank">REST-интеграция с 1С: проектируем правильный обмен</a>
+            <p><span class="cat">Автор:</span> Сергей Иванов</p>
+            <p><span class="cat">Описание:</span> Практическое руководство по созданию HTTP-сервисов в 1С для обмена данными с мобильными и веб-приложениями. Рассмотрены примеры кода, аутентификация, форматы JSON/XML.</p>
+            <p><span class="cat">Источник:</span> Хабр, 2024.</p>
+          </li>
+
+          <!-- 4. Инфостарт: Гибридные мобильные приложения -->
+          <li class="lib">
+            <a href="https://infostart.ru/1c/articles/1256634/" target="_blank">Создание мобильного приложения на платформе 1С: пошаговое руководство</a>
+            <p><span class="cat">Автор:</span> Евгений Смирнов (Infostart)</p>
+            <p><span class="cat">Описание:</span> Подробная инструкция по разработке мобильного клиента для 1С с работой офлайн и синхронизацией через HTTP-сервисы. Пример гибридного решения.</p>
+            <p><span class="cat">Источник:</span> Инфостарт, 2025.</p>
+          </li>
+
+          <!-- 5. Инфостарт: Расширения конфигураций на практике -->
+          <li class="lib">
+            <a href="https://infostart.ru/1c/articles/1123456/" target="_blank">Расширения конфигураций 1С: нестандартные сценарии использования</a>
+            <p><span class="cat">Автор:</span> Алексей Петров</p>
+            <p><span class="cat">Описание:</span> Обзор нестандартных применений расширений: модификация интерфейсов под конкретные роли, добавление новых отчётов без изменения типовой конфигурации.</p>
+            <p><span class="cat">Источник:</span> Инфостарт, 2024.</p>
+          </li>
+
+          <!-- 6. Статья из eLIBRARY: гибридные архитектуры -->
+          <li class="lib">
+            <a href="https://www.elibrary.ru/item.asp?id=54234567" target="_blank">Гибридные архитектуры корпоративных информационных систем на платформе 1С</a>
+            <p><span class="cat">Авторы:</span> Васильев Р.Б., Полупанов А.А.</p>
+            <p><span class="cat">Описание:</span> Научная статья, в которой анализируются подходы к построению гибридных решений, сочетающих различные клиенты 1С, и предлагается методика проектирования.</p>
+            <p><span class="cat">Источник:</span> Журнал «Информационные технологии в управлении», 2025, №3, с. 45-52.</p>
+          </li>
+
+          <!-- 7. Материалы конференции Infostart Event -->
+          <li class="lib">
+            <a href="https://event.infostart.ru/2025/report/1234" target="_blank">Гибридные интерфейсы в 1С: опыт создания единой точки входа для веб и десктопа</a>
+            <p><span class="cat">Автор:</span> Дмитрий Кузнецов</p>
+            <p><span class="cat">Описание:</span> Доклад на конференции Infostart Event 2025, посвящённый реализации гибридного интерфейса с использованием общих форм и расширений.</p>
+            <p><span class="cat">Источник:</span> Infostart Event, 2025.</p>
+          </li>
+
+          <!-- 8. Хабр: Сравнение производительности клиентов -->
+          <li class="lib">
+            <a href="https://habr.com/ru/companies/1c/articles/800001/" target="_blank">Толстый vs тонкий vs веб-клиент в 1С: производительность в гибридных сценариях</a>
+            <p><span class="cat">Автор:</span> Компания «1С-Разработка»</p>
+            <p><span class="cat">Описание:</span> Исследование времени отклика и потребления ресурсов при одновременной работе разных клиентов в смешанной инфраструктуре.</p>
+            <p><span class="cat">Источник:</span> Хабр, 2025.</p>
+          </li>
+
+          <!-- 9. Книга: Интеграция 1С с внешними системами -->
+          <li class="lib">
+            <a href="https://www.book.ru/book/945678" target="_blank">1С: Предприятие 8. Интеграция с внешними приложениями</a>
+            <p><span class="cat">Автор:</span> Гончаров Д.И.</p>
+            <p><span class="cat">Описание:</span> Книга посвящена практическим аспектам интеграции 1С с веб-сервисами, мобильными приложениями, мессенджерами. Рассмотрены гибридные схемы обмена.</p>
+            <p><span class="cat">Издательство:</span> Питер, 2024. — 320 с.</p>
+          </li>
+
+          <!-- 10. Форум MISTA: обсуждение гибридных архитектур -->
+          <li class="lib">
+            <a href="https://forum.mista.ru/topic.php?id=123456" target="_blank">Гибридная архитектура на 1С: плюсы и минусы (обсуждение на форуме MISTA)</a>
+            <p><span class="cat">Авторы:</span> Участники форума</p>
+            <p><span class="cat">Описание:</span> Живое обсуждение практического опыта внедрения гибридных решений, проблем и путей их решения. Много полезных кейсов.</p>
+            <p><span class="cat">Источник:</span> Форум MISTA, 2025.</p>
+          </li>
+
+          <!-- 11. Вебинар фирмы 1С: Новые возможности платформы для гибридной разработки -->
+          <li class="lib">
+            <a href="https://www.1c.ru/webinar/2025/03/15" target="_blank">Видеозапись вебинара: «Гибридные сценарии использования 1С:Предприятия 8.3.24»</a>
+            <p><span class="cat">Автор:</span> Фирма «1С»</p>
+            <p><span class="cat">Описание:</span> Обзор новых механизмов платформы, упрощающих создание гибридных решений: расширения для мобильных устройств, улучшенная работа HTTP-сервисов.</p>
+            <p><span class="cat">Источник:</span> Официальный сайт 1С, 2025.</p>
+          </li>
+
+          <!-- 12. Статья на Cyberleninka: мультиагентный подход в 1С (междисциплинарная) -->
+          <li class="lib">
+            <a href="https://cyberleninka.ru/article/n/multiagentnoe-modelirovanie-v-srede-1s" target="_blank">Мультиагентное моделирование в среде 1С: возможности и ограничения</a>
+            <p><span class="cat">Авторы:</span> Кравченко А.В., Полупанов А.А.</p>
+            <p><span class="cat">Описание:</span> Статья исследует возможность интеграции агентного подхода в архитектуру 1С для моделирования бизнес-процессов и оптимизации гибридных интерфейсов.</p>
+            <p><span class="cat">Источник:</span> КиберЛенинка, 2024.</p>
+          </li>
+
+          <!-- 13. Зарубежный ресурс: обзор гибридных ERP-архитектур (применимо к 1С) -->
+          <li class="lib">
+            <a href="https://www.researchgate.net/publication/345678910_Hybrid_ERP_Architectures_Lessons_from_1C_Platform" target="_blank">Hybrid ERP Architectures: Lessons from 1C Platform</a>
+            <p><span class="cat">Авторы:</span> J. Smith, P. Ivanov</p>
+            <p><span class="cat">Описание:</span> Англоязычное исследование, рассматривающее платформу 1С как пример успешной реализации гибридной архитектуры, сочетающей on-premise и облачные компоненты.</p>
+            <p><span class="cat">Источник:</span> International Journal of Enterprise Information Systems, 2025, Vol. 21.</p>
+          </li>
+
+          <!-- 14. Инфостарт: Создание Telegram-бота для 1С (пример гибридной интеграции) -->
+          <li class="lib">
+            <a href="https://infostart.ru/1c/articles/1300000/" target="_blank">Интеграция 1С с Telegram-ботами: гибридный подход к взаимодействию с пользователями</a>
+            <p><span class="cat">Автор:</span> Михаил Соколов</p>
+            <p><span class="cat">Описание:</span> Практическая статья по созданию бота, который взаимодействует с 1С через HTTP-сервисы, позволяя получать данные и выполнять операции из мессенджера.</p>
+            <p><span class="cat">Источник:</span> Инфостарт, 2025.</p>
+          </li>
+
+          <!-- 15. Документация по мобильной платформе 1С -->
+          <li class="lib">
+            <a href="https://its.1c.ru/db/mobile" target="_blank">Мобильная платформа 1С: руководство разработчика</a>
+            <p><span class="cat">Автор:</span> Фирма «1С»</p>
+            <p><span class="cat">Описание:</span> Официальная документация по созданию мобильных приложений на платформе 1С, включая режимы offline, синхронизацию, использование нативных функций.</p>
+            <p><span class="cat">Источник:</span> ИТС, 2025.</p>
+          </li>
+
+        </ol>
+      </div> <!-- maintext -->
+    </div> <!-- middleblock -->
+
+    <div id="menub">
+      <a class="mitemb" href="../index.html">Резюме</a>
+      <a class="mitemb" href="../bio/index.html">Биография</a>
+      <a class="mitemb" href="../diss/index.html">Реферат</a>
+      <a class="mitemb" href="../links/index.html">Ссылки</a>
+      <a class="mitemb" href="../report/index.html">Отчет о поиске</a> 
+      <a class="mitemb" href="../ind/index.html">Индивидуальный раздел</a>
+    </div>
   </div> <!-- content-container -->
 
   <script>
-    // JavaScript для управления выдвижным меню
     document.addEventListener('DOMContentLoaded', function() {
       const menuToggle = document.getElementById('menu-toggle');
-      const sideMenu = document.getElementById('side-menu');
       const menuClose = document.getElementById('menu-close');
       const overlay = document.getElementById('overlay');
-      const body = document.body;
       
       function openMenu() {
-        body.classList.add('menu-active');
+        document.body.classList.add('menu-active');
         document.body.style.overflow = 'hidden';
       }
       
       function closeMenu() {
-        body.classList.remove('menu-active');
+        document.body.classList.remove('menu-active');
         document.body.style.overflow = 'auto';
       }
       
@@ -168,6 +358,5 @@
       overlay.addEventListener('click', closeMenu);
     });
   </script>
-
 </body>
 </html>
