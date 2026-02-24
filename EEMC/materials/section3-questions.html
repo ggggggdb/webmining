@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопросы и задания - Раздел 3 | Программирование на Go</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/code-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Навигационная панель -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">← На главную</a>
+                <div class="nav-links">
+                    <a href="#questions" class="nav-link">Вопросы</a>
+                    <a href="#exercises" class="nav-link">Упражнения</a>
+                    <a href="#example" class="nav-link">Пример решения</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="../index.html">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Вопросы и задания к разделу 3</span>
+        </div>
+
+        <!-- Заголовок -->
+        <header class="theory-header">
+            <h1 class="theory-title">Вопросы и задания</h1>
+            <p class="theory-subtitle">Раздел 3: Функции</p>
+        </header>
+
+        <main class="theory-content">
+            <!-- Секция с вопросами -->
+            <section id="questions" class="content-section">
+                <h2 class="section-heading">📝 Контрольные вопросы</h2>
+                
+                <div class="questions-container">
+                    <!-- Вопрос 1 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">1</span>
+                            <h3 class="question-text">Как объявить функцию в Go?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 2 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">2</span>
+                            <h3 class="question-text">Что такое множественное возвращение значений?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 3 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">3</span>
+                            <h3 class="question-text">Как передаются аргументы — по значению или по ссылке?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 4 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">4</span>
+                            <h3 class="question-text">Что такое рекурсия?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 5 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">5</span>
+                            <h3 class="question-text">Что такое анонимные функции и где они полезны?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 6 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">6</span>
+                            <h3 class="question-text">Что такое функция как значение?</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция с упражнениями -->
+            <section id="exercises" class="content-section">
+                <h2 class="section-heading">💻 Упражнения для самостоятельной работы</h2>
+                
+                <div class="exercises-container">
+                    <!-- Упражнение 1 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Упражнение 1</span>
+                        </div>
+                        <div class="exercise-description">
+                            <p>Написать функцию, вычисляющую факториал числа</p>
+                        </div>
+                    </div>
+
+                    <!-- Упражнение 2 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Упражнение 2</span>
+                        </div>
+                        <div class="exercise-description">
+                            <p>Создать функцию, принимающую функцию в качестве параметра</p>
+                        </div>
+                    </div>
+
+                    <!-- Упражнение 3 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Упражнение 3</span>
+                        </div>
+                        <div class="exercise-description">
+                            <p>Реализовать сортировку массива с использованием функции-компаратора</p>
+                        </div>
+                    </div>
+
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Упражнение 4</span>
+                        </div>
+                        <div class="exercise-description">
+                            <p>Написать рекурсивную функцию вычисления суммы элементов массива</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <strong>📌 Задание:</strong> Выполните не менее трёх из предложенных упражнений и представьте решение.
+                </div>
+            </section>
+
+            <!-- Пример решения -->
+            <section id="example" class="content-section">
+                <h2 class="section-heading">🎯 Пример решения упражнения 2</h2>
+                
+                <div class="solution-container">
+                    <div class="solution-description">
+                        <p>Ниже представлено решение упражнения 2</p>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>Код программы main.go</h4>
+                        <pre><code class="language-go">package main
+
+import "fmt"
+
+func factorial(n int) int {
+    if n == 0 {
+        return 1
+    }
+    return n * factorial(n-1)
+}
+
+func main() {
+    fmt.Println(factorial(5)) 
+}
+</code></pre>
+                    </div>
+            </section>
+        </main>
+
+        <!-- Навигация -->
+        <div class="theory-navigation">
+            <a href="topic3-1-theory.html" class="nav-button prev">← К материалам раздела 3</a>
+            <a href="../index.html" class="nav-button home">На главную</a>
+            <a href="topic4-1-theory.html" class="nav-button next">К материалам раздела 4 →</a>
+        </div>
+
+        <footer class="theory-footer">
+            <p>&copy; 2025 ЭУМК "Программирование на Go". Упражнения для самостоятельной работы.</p>
+        </footer>
+    </div>
+
+    <script src="../js/code-highlight.js"></script>
+</body>
+</html>

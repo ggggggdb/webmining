@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопросы и задания - Раздел 6 | Программирование на Go</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/code-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Навигационная панель -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">← На главную</a>
+                <div class="nav-links">
+                    <a href="#questions" class="nav-link">Вопросы</a>
+                    <a href="#exercises" class="nav-link">Упражнения</a>
+                    <a href="#example" class="nav-link">Пример решения</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="../index.html">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Вопросы и задания к разделу 6</span>
+        </div>
+
+        <!-- Заголовок -->
+        <header class="theory-header">
+            <h1 class="theory-title">Вопросы и задания</h1>
+            <p class="theory-subtitle">Раздел 6: Параллельное программирование. Горутины</p>
+        </header>
+
+        <main class="theory-content">
+            <!-- Секция с вопросами -->
+            <section id="questions" class="content-section">
+                <h2 class="section-heading">📝 Контрольные вопросы</h2>
+                
+                <div class="questions-container">
+                    <!-- Вопрос 1 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">1</span>
+                            <h3 class="question-text">Что такое горутина?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 2 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">2</span>
+                            <h3 class="question-text">Как работает sync.WaitGroup?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 3 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">3</span>
+                            <h3 class="question-text">Что такое канал и для чего он используется?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 4 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">4</span>
+                            <h3 class="question-text">Что означает закрытие канала?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 5 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">5</span>
+                            <h3 class="question-text">Чем отличается буферизированный канал от небуферизированного?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 6 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">6</span>
+                            <h3 class="question-text">Как работает оператор select?</h3>
+                        </div>
+                    </div>
+
+                    <!-- Вопрос 7 -->
+                    <div class="question-item">
+                        <div class="question-header">
+                            <span class="question-number">7</span>
+                            <h3 class="question-text">Что такое мьютекс и когда он используется?</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция с упражнениями -->
+            <section id="exercises" class="content-section">
+                <h2 class="section-heading">💻 Упражнения для самостоятельной работы</h2>
+                
+                <div class="exercises-container">
+                    <!-- Упражнение 1 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Упражнение 1</span>
+                        </div>
+                        <div class="exercise-description">
+                            <p>Создать 3 горутины, каждая из которых выводит своё сообщение</p>
+                        </div>
+                    </div>
+
+                    <!-- Упражнение 2 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Упражнение 2</span>
+                        </div>
+                        <div class="exercise-description">
+                            <p>Реализовать обмен данными между горутинами через канал</p>
+                        </div>
+                    </div>
+
+                    <!-- Упражнение 3 -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Упражнение 3</span>
+                        </div>
+                        <div class="exercise-description">
+                            <p>Использовать select для обработки данных из двух каналов</p>
+                        </div>
+                    </div>
+
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Упражнение 4</span>
+                        </div>
+                        <div class="exercise-description">
+                            <p>Написать программу, использующую мьютекс для синхронизированного доступа к счётчику</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <strong>📌 Задание:</strong> Выполните не менее трёх из предложенных упражнений и представьте решение.
+                </div>
+            </section>
+
+            <!-- Пример решения -->
+            <section id="example" class="content-section">
+                <h2 class="section-heading">🎯 Пример решения упражнения 2</h2>
+                
+                <div class="solution-container">
+                    <div class="solution-description">
+                        <p>Ниже представлено решение упражнения 2</p>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>Код программы main.go</h4>
+                        <pre><code class="language-go">package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func send(ch chan string) {
+    ch <- "Сообщение из горутины"
+}
+
+func main() {
+    ch := make(chan string)
+    go send(ch)
+    fmt.Println(<-ch)
+    time.Sleep(100 * time.Millisecond)
+}
+
+</code></pre>
+                    </div>
+            </section>
+        </main>
+
+        <!-- Навигация -->
+        <div class="theory-navigation">
+            <a href="topic6-1-theory.html" class="nav-button prev">← К материалам раздела 6</a>
+            <a href="../index.html" class="nav-button home">На главную</a>
+            <a href="tasks/prac-tasks.html" class="nav-button next">Практические задания →</a>
+        </div>
+
+        <footer class="theory-footer">
+            <p>&copy; 2025 ЭУМК "Программирование на Go". Упражнения для самостоятельной работы.</p>
+        </footer>
+    </div>
+
+    <script src="../js/code-highlight.js"></script>
+</body>
+</html>
